@@ -118,7 +118,65 @@ header h2 {
     background-color: #584ff5;
     transition: 0.3s;
 }
+/* button */
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    visibility: hidden;
+    
+}
 
+.custom-checkbox{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    background: #fff;   
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition:ease-in 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox{
+    background: #092c3e;   
+}
+
+.custom-checkbox:before{
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    background: #092c3e;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox:before{
+    transform: translateX(-50px);   
+}
+
+/* .custom-checkbox:after{
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox:after{
+    transform: translateX(0px);
+} */
+
+
+/* dark mode */
 .dark-mode {
     background-color: #fff;
     color: rgb(0, 0, 0);
