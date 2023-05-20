@@ -13,7 +13,6 @@ form.addEventListener('submit', (e) => {
     checkInputs()
 });
 
-
 function checkInputs(){
     //Validação do campo nome
     const inputNome = nome.value.trim()
@@ -44,7 +43,10 @@ function checkInputs(){
         setErrorFor(email, 'Preencha esse campo')
     } else if (emailInput.length < 5){
         setErrorFor(email, 'Esse campo deve ter o mínino de 5 caracteres')
-    } else {
+    } else if (!emailInput.includes('@')){
+        setErrorFor(email, 'Insira um e-mail válido')
+    }
+    else {
         setSucessFor(email)
     }
 
@@ -53,19 +55,22 @@ function checkInputs(){
 
     if (senhaInput == ''){
         setErrorFor(senha, 'Preencha esse campo')
-    } else if (senhaInput.length < 5){
-        setErrorFor(senha, 'Esse campo deve ter o mínino de 5 caracteres')
-    } else {
+    } else if (senhaInput.length < 6){
+        setErrorFor(senha, 'Esse campo deve ter o mínino de 6 caracteres')
+    } else if (senhaInput.length > 8){
+        setErrorFor(senha, 'Esse campo deve ter no máximo 8 caracteres')
+    } 
+    else {
         setSucessFor(senha)
     }
 
     //Validação do campo confirmação senha
     const senha2Input = senha2.value.trim();
 
-    if (senha2Input == ''){
+    if(senha2Input == ''){
         setErrorFor(senha2, 'Preencha esse campo')
-    } else if (senha2Input.length < 5){
-        setErrorFor(senha2, 'Esse campo deve ter o mínino de 5 caracteres')
+    }else if (senhaInput != senha2Input){
+        setErrorFor(senha2, 'A senha não corresponde a senha fornecida')
     } else {
         setSucessFor(senha2)
     }
@@ -75,7 +80,7 @@ function checkInputs(){
 
 function setErrorFor(input, message){
     const formControl = input.parentElement;
-    var small = document.querySelector('small');
+    var small = formControl.querySelector('small');
 
     small.innerText = message;
 
