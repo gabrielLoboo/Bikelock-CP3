@@ -6,7 +6,6 @@ const email = document.getElementById('email')
 const senha = document.getElementById('senha')
 const senha2 = document.getElementById('senha-confirmacao')
 
-
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -77,7 +76,6 @@ function checkInputs(){
 
 }
 
-
 function setErrorFor(input, message){
     const formControl = input.parentElement;
     var small = formControl.querySelector('small');
@@ -86,8 +84,6 @@ function setErrorFor(input, message){
 
     formControl.className = 'form-control error'
 }
-
-
 
 function setSucessFor(input){
     const formControl = input.parentElement;
