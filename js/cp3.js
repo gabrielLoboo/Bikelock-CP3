@@ -112,6 +112,6 @@ function toggleDarkMode() {
         labels[i].classList.toggle("dark-mode");
       }
 
-    //   var container = document.querySelector(".container");
-    //   container.classList.toggle("dark-mode");
+    var container = document.querySelector(".container");
+    container.classList.toggle("dark-mode");
 }
