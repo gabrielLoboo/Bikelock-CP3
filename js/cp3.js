@@ -103,3 +103,15 @@ function setSucessFor(input){
     formControl.className = 'form-control success'
 }
 
+function toggleDarkMode() {
+    var body = document.body;
+    body.classList.toggle("dark-mode"); 
+
+    var labels = document.getElementsByTagName("label");
+      for (var i = 0; i < labels.length; i++) {
+        labels[i].classList.toggle("dark-mode");
+      }
+
+    var container = document.querySelector(".container");
+    container.classList.toggle("dark-mode");
+}
