@@ -9,10 +9,14 @@ const senha2 = document.getElementById('senha-confirmacao')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    checkInputs()
+    checkInputNome()
+    checkInputSobrenome()
+    checkInputEmail()
+    checkInputSenha()
+    checkInputSenha2()
 });
 
-function checkInputs(){
+function checkInputNome(){
     //Validação do campo nome
     const inputNome = nome.value.trim()
     
@@ -23,7 +27,9 @@ function checkInputs(){
     } else {
         setSucessFor(nome)
     }
+}
 
+function checkInputSobrenome(){
     //Validação do campo sobrenome
     const sobrenomeInput = sobrenome.value.trim();
 
@@ -34,7 +40,9 @@ function checkInputs(){
     } else {
         setSucessFor(sobrenome)
     }
+}
 
+function checkInputEmail(){
     //Validação do campo email
     const emailInput = email.value.trim();
 
@@ -48,7 +56,9 @@ function checkInputs(){
     else {
         setSucessFor(email)
     }
+}
 
+function checkInputSenha(){
     //Validação do campo senha
     const senhaInput = senha.value.trim();
 
@@ -62,8 +72,11 @@ function checkInputs(){
     else {
         setSucessFor(senha)
     }
+}
 
+function checkInputSenha2(){
     //Validação do campo confirmação senha
+    const senhaInput = senha.value.trim();
     const senha2Input = senha2.value.trim();
 
     if(senha2Input == ''){
@@ -73,8 +86,8 @@ function checkInputs(){
     } else {
         setSucessFor(senha2)
     }
-
 }
+
 
 function setErrorFor(input, message){
     const formControl = input.parentElement;
