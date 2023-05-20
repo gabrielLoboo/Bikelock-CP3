@@ -13,8 +13,8 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-
     border: 0;
+    transition: background-color 0.5s;  
 }
 
 .container {
@@ -118,3 +118,19 @@ header h2 {
     background-color: #584ff5;
     transition: 0.3s;
 }
+
+.dark-mode {
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+}
+
+.dark-mode label {
+    background-color: #fdfdfd ;
+    color: #000000;
+    transition: 0.5s;
+}
+
+/* .dark-mode container{
+    background-color: #ffffff;
+    border: 2px solid #3E445B;
+} */
