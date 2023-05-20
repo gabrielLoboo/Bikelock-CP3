@@ -138,10 +138,6 @@ input[type="checkbox"]{
     transition:ease-in 0.5s;
 }
 
-input[type="checkbox"]:checked ~ .custom-checkbox{
-    background: #092c3e;   
-}
-
 .custom-checkbox:before{
     content: '';
     position: absolute;
@@ -157,6 +153,8 @@ input[type="checkbox"]:checked ~ .custom-checkbox{
 input[type="checkbox"]:checked ~ .custom-checkbox:before{
     transform: translateX(-50px);   
 }
+
+
 
 /* .custom-checkbox:after{
     content: '';
